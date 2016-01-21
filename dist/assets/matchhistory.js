@@ -800,7 +800,7 @@ define("matchhistory/templates/index", ["exports"], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createElement("p");
+        var el1 = dom.createElement("h4");
         var el2 = dom.createTextNode("Recipe storage is a simple program for storing your");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("br");
@@ -836,11 +836,11 @@ define("matchhistory/templates/listingredient", ["exports"], function (exports) 
           "loc": {
             "source": null,
             "start": {
-              "line": 8,
+              "line": 9,
               "column": 4
             },
             "end": {
-              "line": 20,
+              "line": 25,
               "column": 4
             }
           },
@@ -869,14 +869,22 @@ define("matchhistory/templates/listingredient", ["exports"], function (exports) 
           var el2 = dom.createTextNode("\n            ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("td");
+          dom.setAttribute(el2, "id", "inputtd");
           var el3 = dom.createTextNode("\n                ");
           dom.appendChild(el2, el3);
           var el3 = dom.createComment("");
           dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n                    ");
+          var el3 = dom.createTextNode("\n                   \n            ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            \n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("td");
+          var el3 = dom.createTextNode("\n                 ");
           dom.appendChild(el2, el3);
           var el3 = dom.createElement("button");
           dom.setAttribute(el3, "class", "btn btn-success");
+          dom.setAttribute(el3, "id", "savebutton");
           var el4 = dom.createTextNode("\n                Save\n                ");
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
@@ -892,16 +900,15 @@ define("matchhistory/templates/listingredient", ["exports"], function (exports) 
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var element0 = dom.childAt(fragment, [1]);
-          var element1 = dom.childAt(element0, [5]);
-          var element2 = dom.childAt(element1, [3]);
+          var element1 = dom.childAt(element0, [7, 1]);
           var morphs = new Array(4);
           morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 0, 0);
           morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 0, 0);
-          morphs[2] = dom.createMorphAt(element1, 1, 1);
-          morphs[3] = dom.createElementMorph(element2);
+          morphs[2] = dom.createMorphAt(dom.childAt(element0, [5]), 1, 1);
+          morphs[3] = dom.createElementMorph(element1);
           return morphs;
         },
-        statements: [["content", "item.name", ["loc", [null, [10, 16], [10, 29]]]], ["content", "item.amount", ["loc", [null, [11, 16], [11, 31]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "item.name", ["loc", [null, [13, 30], [13, 39]]]]], [], []], "class", "form-control"], ["loc", [null, [13, 16], [13, 62]]]], ["element", "action", ["save"], [], ["loc", [null, [15, 13], [15, 30]]]]],
+        statements: [["content", "item.name", ["loc", [null, [11, 16], [11, 29]]]], ["content", "item.amount", ["loc", [null, [12, 16], [12, 31]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "item.name", ["loc", [null, [14, 31], [14, 40]]]]], [], []], "class", "form-control"], ["loc", [null, [14, 16], [14, 63]]]], ["element", "action", ["save"], [], ["loc", [null, [20, 13], [20, 30]]]]],
         locals: ["item"],
         templates: []
       };
@@ -916,7 +923,7 @@ define("matchhistory/templates/listingredient", ["exports"], function (exports) 
             "column": 0
           },
           "end": {
-            "line": 24,
+            "line": 29,
             "column": 0
           }
         },
@@ -956,6 +963,12 @@ define("matchhistory/templates/listingredient", ["exports"], function (exports) 
         var el5 = dom.createTextNode("Amount");
         dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n        ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("th");
+        var el5 = dom.createTextNode("Edit");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
         var el4 = dom.createTextNode("\n    ");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
@@ -981,7 +994,7 @@ define("matchhistory/templates/listingredient", ["exports"], function (exports) 
         morphs[1] = dom.createMorphAt(fragment, 4, 4, contextualElement);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [8, 12], [8, 17]]]]], [], 0, null, ["loc", [null, [8, 4], [20, 13]]]], ["content", "outlet", ["loc", [null, [23, 0], [23, 10]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [9, 12], [9, 17]]]]], [], 0, null, ["loc", [null, [9, 4], [25, 13]]]], ["content", "outlet", ["loc", [null, [28, 0], [28, 10]]]]],
       locals: [],
       templates: [child0]
     };
@@ -1395,7 +1408,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("matchhistory/app")["default"].create({"name":"matchhistory","version":"1.0.0+50e03ea1"});
+  require("matchhistory/app")["default"].create({"name":"matchhistory","version":"1.0.0+30e6db10"});
 }
 
 /* jshint ignore:end */

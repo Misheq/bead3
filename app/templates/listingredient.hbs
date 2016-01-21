@@ -4,14 +4,19 @@
     <tr>
         <th>Name</th>
         <th>Amount</th>
+        <th>Edit</th>
     </tr>
     {{#each model as |item|}}
         <tr>
             <td>{{item.name}}</td>
             <td>{{item.amount}}</td>
+            <td id="inputtd">
+                {{input  value=item.name class="form-control"}}
+                   
+            </td>
+            
             <td>
-                {{input value=item.name class="form-control"}}
-                    <button class="btn btn-success" 
+                 <button class="btn btn-success" id="savebutton"
 	            {{action "save"}}>
                 Save
                 </button>
