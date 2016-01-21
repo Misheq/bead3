@@ -1,0 +1,23 @@
+<h1 id="inglist"> List Ingredient </h1>
+<div class="table-responsive">
+<table class="table table-striped" id="list">
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+    </tr>
+    {{#each model as |item|}}
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.amount}}</td>
+            <td>
+                {{input value=item.name class="form-control"}}
+                    <button class="btn btn-success" 
+	            {{action "save"}}>
+                Save
+                </button>
+            </td>
+        </tr>
+    {{/each}}
+</table> 
+</div>
+{{outlet}}

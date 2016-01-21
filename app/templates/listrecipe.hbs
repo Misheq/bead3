@@ -1,0 +1,27 @@
+<h1> Recipe List </h1>
+<div class="table-responsive">
+<table class="table table-striped" id="list">
+    <tr>
+        <th>Name</th>
+        <th>Time</th>
+        <th>Difficulty</th>
+        <th>Ingredient</th>
+    
+    </tr>
+    {{#each model as |item|}}
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.difficulty}}</td>
+            
+            {{#link-to "addnewingredient" item.id}}  Add {{/link-to}}
+            {{#link-to "listrecipeingredient" item.id}}  List {{/link-to}}   
+            
+            <button {{action "deleteRecipe" item.id}}> 
+                Delete
+            </button>
+        </tr>
+    {{/each}}
+</table> 
+</div>
+{{outlet}}

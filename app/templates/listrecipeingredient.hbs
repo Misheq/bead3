@@ -1,0 +1,18 @@
+<h1 id="inglist"> Ingredient List </h1>
+<div class="table-responsive">
+<table class="table table-striped" id="list">
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+    
+    </tr>
+    {{#each model.ingredients as |item|}}
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.amount}}</td>
+            
+        </tr>
+    {{/each}}
+</table> 
+</div>
+{{outlet}}
