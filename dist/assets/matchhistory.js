@@ -1395,7 +1395,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("matchhistory/app")["default"].create({"name":"matchhistory","version":"1.0.0+"});
+  require("matchhistory/app")["default"].create({"name":"matchhistory","version":"1.0.0+50e03ea1"});
 }
 
 /* jshint ignore:end */

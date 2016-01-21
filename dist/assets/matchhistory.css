@@ -1,26 +1,27 @@
 body {
-    margin: auto;
+    padding-left: 40px;
     width: 80%;
-    padding: 10px;
-    padding-top: 70px;
+    padding: 60px;
+    padding-top: 20px;
+    position: absolute;
 }
 
 .control-label {
-    font-size: 110%;
+    font-size: 100%;
 }
 
 .navbar{
-    background-color: grey;
-    font-size: 110%;
+    background-color: white;
+    font-size: 100%;
 }
 
 h1 {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .table-responsive {
-    background-color: grey;
+    background-color: #90adff ;
     width: 100%;
     padding: 30px;
     border-radius: 20px 20px 20px 20px;
@@ -29,7 +30,7 @@ h1 {
 
 th {
     color: black;
-    font-size: 110%;
+    font-size: 100%;
 }
 
 button {
@@ -39,10 +40,11 @@ button {
 footer {
     position:fixed;
     height:30px;
-    background-color: #484848;
+    background-color: #90adff ;
     bottom:0px;
     left:0px;
     right:0px;
+    padding-top: 5px;
     margin-bottom:0px;
     text-align: center;
     color: white;
